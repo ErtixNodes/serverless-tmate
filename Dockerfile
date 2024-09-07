@@ -6,6 +6,8 @@ RUN "echo 'https://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repos
 RUN apk upgrade
 RUN apk add bash htop curl wget sudo
 
+RUN apk add tmate
+
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
 
