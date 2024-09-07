@@ -1,10 +1,11 @@
 # Container image that runs your code
-FROM alpine:latest
-
-RUN "echo 'https://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories"
+FROM alpine:edge
 
 RUN apk upgrade
 RUN apk add bash htop curl wget sudo
+
+RUN "echo 'https://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories"
+RUN apk update
 
 RUN apk add tmate
 
